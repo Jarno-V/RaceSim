@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LDpAQ+TH8S2kDmgHAqxRN2WJB8v9ZaDmPEe1NoQfc22e5inoRvSKSE+fnAOsWbjwnXm8fDjJ6YcdOhh1OLc45g==",
+  "dgSpecHash": "n1lRNC7GVH+ZW6zX6ZVJFXgI7sdT78dJqCil+eulYujsM+IDFG5OQ8vQFQ73D7fSdoVYpycVuYXcWzvNntDKJA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jarno\\Desktop\\C#\\raceSimulator\\View\\consoleProject.csproj",
+  "projectFilePath": "C:\\Users\\jarno\\Desktop\\RaceSim\\raceSimulator\\View\\consoleProject.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

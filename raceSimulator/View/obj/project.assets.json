@@ -49,11 +49,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jarno\\Desktop\\C#\\raceSimulator\\View\\consoleProject.csproj",
+      "projectUniqueName": "C:\\Users\\jarno\\Desktop\\RaceSim\\raceSimulator\\View\\consoleProject.csproj",
       "projectName": "consoleProject",
-      "projectPath": "C:\\Users\\jarno\\Desktop\\C#\\raceSimulator\\View\\consoleProject.csproj",
+      "projectPath": "C:\\Users\\jarno\\Desktop\\RaceSim\\raceSimulator\\View\\consoleProject.csproj",
       "packagesPath": "C:\\Users\\jarno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jarno\\Desktop\\C#\\raceSimulator\\View\\obj\\",
+      "outputPath": "C:\\Users\\jarno\\Desktop\\RaceSim\\raceSimulator\\View\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -74,11 +74,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\jarno\\Desktop\\C#\\raceSimulator\\Controller\\Controller.csproj": {
-              "projectPath": "C:\\Users\\jarno\\Desktop\\C#\\raceSimulator\\Controller\\Controller.csproj"
+            "C:\\Users\\jarno\\Desktop\\RaceSim\\raceSimulator\\Controller\\Controller.csproj": {
+              "projectPath": "C:\\Users\\jarno\\Desktop\\RaceSim\\raceSimulator\\Controller\\Controller.csproj"
             },
-            "C:\\Users\\jarno\\Desktop\\C#\\raceSimulator\\Model\\Model.csproj": {
-              "projectPath": "C:\\Users\\jarno\\Desktop\\C#\\raceSimulator\\Model\\Model.csproj"
+            "C:\\Users\\jarno\\Desktop\\RaceSim\\raceSimulator\\Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\jarno\\Desktop\\RaceSim\\raceSimulator\\Model\\Model.csproj"
             }
           }
         }

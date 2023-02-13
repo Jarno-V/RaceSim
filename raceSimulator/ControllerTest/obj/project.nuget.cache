@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uBDw4KA+601Bv/N/C2fmjDi4j9iXftkdyef2cVil8qXmmh22yulZ8hPL4U9RmpzohUSaUeBAqdeyA81FQTH46Q==",
+  "dgSpecHash": "6NJ/yeM57z27cSMb84E5rsvHmjuaNRaDCPTQm91HReSugTKl+C0MFVo/jllpT5LFjFH7luDkmyk/aiqc1buwKw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jarno\\Desktop\\C#\\raceSimulator\\ControllerTest\\ControllerTest.csproj",
+  "projectFilePath": "C:\\Users\\jarno\\Desktop\\RaceSim\\raceSimulator\\ControllerTest\\ControllerTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jarno\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\jarno\\.nuget\\packages\\microsoft.codecoverage\\17.3.2\\microsoft.codecoverage.17.3.2.nupkg.sha512",
