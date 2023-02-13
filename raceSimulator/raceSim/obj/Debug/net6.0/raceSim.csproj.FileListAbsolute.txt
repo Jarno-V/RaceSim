@@ -1,0 +1,15 @@
+C:\Users\jarno\Desktop\C#\raceSimulator\raceSim\obj\Debug\net6.0\raceSim.csproj.AssemblyReference.cache
+C:\Users\jarno\Desktop\C#\raceSimulator\raceSim\obj\Debug\net6.0\raceSim.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jarno\Desktop\C#\raceSimulator\raceSim\obj\Debug\net6.0\raceSim.AssemblyInfoInputs.cache
+C:\Users\jarno\Desktop\C#\raceSimulator\raceSim\obj\Debug\net6.0\raceSim.AssemblyInfo.cs
+C:\Users\jarno\Desktop\C#\raceSimulator\raceSim\obj\Debug\net6.0\raceSim.csproj.CoreCompileInputs.cache
+C:\Users\jarno\Desktop\C#\raceSimulator\raceSim\bin\Debug\net6.0\raceSim.exe
+C:\Users\jarno\Desktop\C#\raceSimulator\raceSim\bin\Debug\net6.0\raceSim.deps.json
+C:\Users\jarno\Desktop\C#\raceSimulator\raceSim\bin\Debug\net6.0\raceSim.runtimeconfig.json
+C:\Users\jarno\Desktop\C#\raceSimulator\raceSim\bin\Debug\net6.0\raceSim.dll
+C:\Users\jarno\Desktop\C#\raceSimulator\raceSim\bin\Debug\net6.0\raceSim.pdb
+C:\Users\jarno\Desktop\C#\raceSimulator\raceSim\obj\Debug\net6.0\raceSim.dll
+C:\Users\jarno\Desktop\C#\raceSimulator\raceSim\obj\Debug\net6.0\refint\raceSim.dll
+C:\Users\jarno\Desktop\C#\raceSimulator\raceSim\obj\Debug\net6.0\raceSim.pdb
+C:\Users\jarno\Desktop\C#\raceSimulator\raceSim\obj\Debug\net6.0\raceSim.genruntimeconfig.cache
+C:\Users\jarno\Desktop\C#\raceSimulator\raceSim\obj\Debug\net6.0\ref\raceSim.dll
