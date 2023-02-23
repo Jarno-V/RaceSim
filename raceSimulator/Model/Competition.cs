@@ -8,7 +8,7 @@ namespace Model
 {
     internal class Competition 
     {
-        List<IParticipant> participants;
+        List<IParticipant> Participants;
         Queue<Track> Tracks;
 
         public Track NextTrack()

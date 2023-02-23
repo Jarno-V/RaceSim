@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    internal class Driver : Competition
+    internal class Driver : IParticipant
     {
+        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Points { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public IEquipment Equipment { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public TeamColors TeamColor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

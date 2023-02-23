@@ -13,6 +13,5 @@ namespace Model
         int DistanceLeft { get; set; }
         int DistanceRight { get; set; }
 
-
     }
 }

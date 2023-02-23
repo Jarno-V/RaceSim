@@ -11,12 +11,8 @@ namespace Model
         public string Name;
         LinkedList<Section> Sections = new LinkedList<Section>();
 
-        public Track(String Name, Section[] SectionTypes) {
-            this.Name = Name;
-            foreach(Section section in SectionTypes)
-            {
-                this.Sections.AddLast(section);
-            }
+        public Track(String Name, SectionTypes[] sections) {
+
         }
     }
 }
