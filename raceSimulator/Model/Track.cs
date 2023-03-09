@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    internal class Track
+    public class Track
     {
         public string Name;
-        LinkedList<Section> Sections = new LinkedList<Section>();
+        LinkedList<Section> Sections;
 
         public Track(String Name, SectionTypes[] sections) {
-
+            this.Name = Name;
         }
     }
 }

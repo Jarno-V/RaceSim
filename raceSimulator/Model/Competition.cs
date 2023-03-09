@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,14 +7,22 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    internal class Competition 
+    public class Competition 
     {
-        List<IParticipant> Participants;
-        Queue<Track> Tracks;
+        public List<IParticipant> Participants = new List<IParticipant>();
+        public Queue<Track> Tracks = new Queue<Track>();
 
         public Track NextTrack()
         {
-            return Track;
+            if (Tracks.Count > 0)
+            {
+                Track nextTrack = Tracks.Dequeue();
+                return nextTrack;
+            } else
+            {
+                return null;
+            }
+
         }
     }
 }

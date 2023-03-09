@@ -14,7 +14,7 @@ namespace Model
         StartGrid,
         Finish
     }
-    internal class Section
+    public class Section
     {
         public SectionTypes SectionType;
     }
