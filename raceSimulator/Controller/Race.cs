@@ -13,7 +13,6 @@ namespace Controller
         public List<IParticipant> participants;
         public DateTime StartTime;
         private Random _random;
-
         private Dictionary<Section, SectionData> _positions;
         
         public Race(Track track, List<IParticipant> participants)

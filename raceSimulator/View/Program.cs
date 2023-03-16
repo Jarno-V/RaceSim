@@ -1,11 +1,14 @@
-﻿using Controller;
+﻿using consoleProject;
+using Controller;
+using Model;
 
 public class Program
 {
     static void Main(string[] args)
     {
         Data.Initialize();
-        Console.WriteLine(Data.NextRace().Name);
+        Visualisatie.DrawTrack(Data.NextRace());
+
 
         for (; ; )
         {
