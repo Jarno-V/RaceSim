@@ -10,12 +10,12 @@ namespace Controller
 {
     public static class Data
     {
-        public static Competition Competition;
+        public static Competition competition;
         public static Race CurrentRace;
 
         static public void Initialize()
         {
-            Competition = new Competition();
+            competition = new Competition();
             addParticipants();
             addTracks();
         }
@@ -24,22 +24,21 @@ namespace Controller
         {
             Driver player1 = new Driver();
             player1.Name = "bob";
-            Competition.Participants.Add(player1);
+            competition.Participants.Add(player1);
 
             Driver player2 = new Driver();
             player2.Name = "henk";
-            Competition.Participants.Add(player2);
+            competition.Participants.Add(player2);
 
             Driver player3 = new Driver();
             player3.Name = "ties";
-            Competition.Participants.Add(player3);
+            competition.Participants.Add(player3);
         }
 
         static public void addTracks()
         {
             SectionTypes[] sections = new SectionTypes[]
             {
-                SectionTypes.StartGrid,
                 SectionTypes.RightCorner,
                 SectionTypes.Straight,
                 SectionTypes.LeftCorner,
@@ -60,18 +59,19 @@ namespace Controller
                 SectionTypes.LeftCorner,
                 SectionTypes.RightCorner,
                 SectionTypes.RightCorner,
-                SectionTypes.Straight
+                SectionTypes.Straight,
+                SectionTypes.StartGrid
             };
             Track track1 = new Track("Zwolle", sections);
             Track track2 = new Track("Ede", sections);
-            Competition.Tracks.Enqueue(track1);
-            Competition.Tracks.Enqueue(track2);
+            competition.Tracks.Enqueue(track1);
+            competition.Tracks.Enqueue(track2);
         }
 
         static public Track NextRace()
         {
-            Track track = Competition.NextTrack();
-            if(track != null) { CurrentRace = new Race(track, Competition.Participants); }
+            Track track = competition.NextTrack();
+            if(track != null) { CurrentRace = new Race(track, competition.Participants); }
             return track;
         }
     }

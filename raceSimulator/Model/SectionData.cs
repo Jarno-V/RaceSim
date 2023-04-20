@@ -8,10 +8,10 @@ namespace Model
 {
     public class SectionData
     {
-        IParticipant left { get; set; }
-        IParticipant right { get; set; }
-        int DistanceLeft { get; set; }
-        int DistanceRight { get; set; }
+        public IParticipant left { get; set; }
+        public IParticipant right { get; set; }
+        public int DistanceLeft { get; set; }
+        public int DistanceRight { get; set; }
 
     }
 }

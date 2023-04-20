@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Controller;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -118,6 +119,15 @@ namespace consoleProject
         {
             CursorLocation[0] += x;
             CursorLocation[1] += y;
+        }
+
+        public static string visualizeDrivers(string sectionString, IParticipant driverLeft, IParticipant driverRight)
+        {
+            
+            
+
+
+            return replacementString;
         }
 
 

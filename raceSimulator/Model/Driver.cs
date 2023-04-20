@@ -11,6 +11,7 @@ namespace Model
     {
         private string _name;
         private int _points;
+        private int[] _startposition;
         public IEquipment Equipment { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public TeamColors TeamColor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Name {
@@ -20,6 +21,12 @@ namespace Model
         public int Points {
             get { return _points; }
             set { _points = value; }
+        }
+
+        public int[] StartPosition
+        {
+            get { return _startposition; }
+            set { _startposition = value; }
         }
     }
 }
