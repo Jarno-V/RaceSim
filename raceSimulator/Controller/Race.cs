@@ -1,4 +1,6 @@
 ﻿using Model;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Controller
 {
@@ -17,7 +19,7 @@ namespace Controller
             this.participants = participants;
             this.StartTime = DateTime.Now;
             this._random = new Random(DateTime.Now.Millisecond);
-            SetStartPosition(track, participants);
+            setStartPosition(track, participants);
         }
         public SectionData GetSectionData(Section section)
         {
@@ -43,24 +45,29 @@ namespace Controller
             }
         }
 
-        public void SetStartPosition(Track track, List<IParticipant> participants)
+        public void setStartPosition(Track track, List<IParticipant> participants)
         {
-            int playerindex = 0;
-            int sectionindex = track.Sections.Count - 1;
-            while (participants.Count > playerindex)
+            int participantCounter = 0;
+
+
+            for (LinkedListNode<Section> section = track.Sections.Last; section != null; section = section.Previous)
             {
-                SectionData sectionData = GetSectionData(track.Sections.ElementAt(sectionindex));
-                if (sectionData.left == null && participants.Count > playerindex)
+                SectionData sectionData =  GetSectionData(section.Value);
+                
+                
+
+                if(participantCounter < participants.Count - 1)
                 {
-                    sectionData.left = participants.ElementAt(playerindex);
-                    playerindex++;
+                    sectionData.left = participants[participantCounter];
+                    sectionData.right = participants[participantCounter + 1];
+
+                    participantCounter += 2;
                 }
-                if (sectionData.right == null && participants.Count > playerindex)
+                else if (participantCounter == participants.Count - 1)
                 {
-                    sectionData.right = participants.ElementAt(playerindex);
-                    playerindex++;
+                    sectionData.left = participants[participantCounter];
+                    participantCounter++;
                 }
-                sectionindex--;
             }
         }
 

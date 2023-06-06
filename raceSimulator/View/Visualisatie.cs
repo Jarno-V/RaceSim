@@ -57,22 +57,22 @@ namespace consoleProject
                         switch (compas)
                         {
                             case 0:
-                                ConsoleTrack(_rightCornerEast);
+                                ConsoleTrack(_leftCornerNorth);
                                 ChangeCursorPosition(-6, -4);
                                 compas = 3;
                                 break;
                             case 1:
-                                ConsoleTrack(_rightCornerSouth);
+                                ConsoleTrack(_leftCornerEast);
                                 ChangeCursorPosition(0, -8);
                                 compas = 0;
                                 break;
                             case 2:
-                                ConsoleTrack(_rightCornerWest);
+                                ConsoleTrack(_leftCornerSouth);
                                 ChangeCursorPosition(6, -4);
                                 compas = 1;
                                 break;
                             case 3:
-                                ConsoleTrack(_rightCornerWest);
+                                ConsoleTrack(_leftCornerWest);
                                 ChangeCursorPosition(0, 0);
                                 compas = 2;
                                 break;
@@ -82,11 +82,11 @@ namespace consoleProject
                         switch (compas)
                         {
                             case 0:
-                                ConsoleTrack(_straightVertical);
+                                ConsoleTrack(_straightVerticalNorth);
                                 ChangeCursorPosition(0, -8);
                                 break;
-                            case 2: 
-                                ConsoleTrack(_straightVertical);
+                            case 2:
+                                ConsoleTrack(_straightVerticalSouth);
                                 ChangeCursorPosition(0, 0);
                                 break;
                             case 1:
@@ -121,24 +121,25 @@ namespace consoleProject
             CursorLocation[1] += y;
         }
 
-        public static string visualizeDrivers(string sectionString, IParticipant driverLeft, IParticipant driverRight)
-        {
-            
-            
-
-
-            return replacementString;
-        }
-
 
         #region graphics
-        private static string[] _finishHorizontal = { "------", "  # ", "  # ", "------" };
-        private static string[] _straightHorizontal = { "------", "    ", "    ", "------" };
-        private static string[] _straightVertical = { "|    |", "|    |", "|    |", "|    |" };
-        private static string[] _rightCornerEast = { @"---\", @"    \", @"     |", @"\    |" };
-        private static string[] _rightCornerSouth = { @"/    |", "     |", "    /", "---/"};
-        private static string[] _rightCornerWest = { @"|    \", "|     ", @" \", @"  \---"};
-        private static string[] _rightCornerNorth =  { "  /---", " /", "|", "|    /" };
+        private static string[] _finishHorizontal = { "------", "  x#", "  y#", "------" };
+
+        private static string[] _straightHorizontal = { "------", "  x ", "  y ", "------" };
+        private static string[] _straightVerticalSouth = { "|    |", "|    |", "|y  x|", "|    |" };
+        private static string[] _straightVerticalNorth = { "|    |", "|    |", "|x  y|", "|    |" };
+
+
+        private static string[] _rightCornerEast = { @"---\", @"   x\", @" y   |", @"\    |" };
+        private static string[] _rightCornerSouth = { @"/    |", " y   |", "   x/", "---/"};
+        private static string[] _rightCornerWest = { @"|    \", "|   y ", @" \x", @"  \---"};
+        private static string[] _rightCornerNorth =  { "  /---", " /x", "|   y", "|    /" };
+
+        private static string[] _leftCornerNorth = { @"---\", @"   y\", @" x   |", @"\    |" };
+        private static string[] _leftCornerEast = { @"/    |", " x   |", "   y/", "---/" };
+        private static string[] _leftCornerSouth = { @"|    \", "|   x ", @" \y", @"  \---" };
+        private static string[] _leftCornerWest = { "  /---", " /y", "|   x", "|    /" };
+
         #endregion
     }
 }

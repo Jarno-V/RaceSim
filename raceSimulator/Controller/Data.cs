@@ -33,6 +33,14 @@ namespace Controller
             Driver player3 = new Driver();
             player3.Name = "ties";
             competition.Participants.Add(player3);
+
+            Driver player4 = new Driver();
+            player4.Name = "tim";
+            competition.Participants.Add(player4);
+
+            Driver player5 = new Driver();
+            player5.Name = "elze";
+            competition.Participants.Add(player5);
         }
 
         static public void addTracks()

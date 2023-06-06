@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\raceSimulator"
+    "\\raceSimulator",
+    "\\raceSimulator\\Controller",
+    "\\raceSimulator\\View"
   ],
-  "SelectedNode": "\\raceSimulator",
+  "SelectedNode": "\\raceSimulator\\Controller\\Race.cs",
   "PreviewInSolutionExplorer": false
 }
