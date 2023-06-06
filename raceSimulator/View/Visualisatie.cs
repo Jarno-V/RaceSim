@@ -22,9 +22,11 @@ namespace consoleProject
             int compas = 1;
             foreach(Section section in track.Sections)
             {
-                switch(section.SectionType) {
+                SectionData sectionData = Data.CurrentRace.GetSectionData(section);
+
+                switch (section.SectionType) {
                     case SectionTypes.StartGrid:
-                        ConsoleTrack(_finishHorizontal);
+                        ConsoleTrack(_finishHorizontal, sectionData);
                         ChangeCursorPosition(6, -4);
                         break;
 
@@ -32,22 +34,22 @@ namespace consoleProject
                         switch (compas)
                         {
                             case 0:
-                                ConsoleTrack(_rightCornerNorth);
+                                ConsoleTrack(_rightCornerNorth, sectionData);
                                 ChangeCursorPosition(6, -4);
                                 compas = 1;
                                 break;
                             case 1:
-                                ConsoleTrack(_rightCornerEast);
+                                ConsoleTrack(_rightCornerEast, sectionData);
                                 ChangeCursorPosition(0, 0);
                                 compas= 2;
                                 break;
                             case 2:
-                                ConsoleTrack(_rightCornerSouth);
+                                ConsoleTrack(_rightCornerSouth, sectionData);
                                 ChangeCursorPosition(-6, -4);
                                 compas = 3;
                                 break;
                             case 3:
-                                ConsoleTrack(_rightCornerWest);
+                                ConsoleTrack(_rightCornerWest, sectionData);
                                 ChangeCursorPosition(0, -8);
                                 compas = 0;
                                 break;
@@ -57,22 +59,22 @@ namespace consoleProject
                         switch (compas)
                         {
                             case 0:
-                                ConsoleTrack(_leftCornerNorth);
+                                ConsoleTrack(_leftCornerNorth, sectionData);
                                 ChangeCursorPosition(-6, -4);
                                 compas = 3;
                                 break;
                             case 1:
-                                ConsoleTrack(_leftCornerEast);
+                                ConsoleTrack(_leftCornerEast, sectionData);
                                 ChangeCursorPosition(0, -8);
                                 compas = 0;
                                 break;
                             case 2:
-                                ConsoleTrack(_leftCornerSouth);
+                                ConsoleTrack(_leftCornerSouth, sectionData);
                                 ChangeCursorPosition(6, -4);
                                 compas = 1;
                                 break;
                             case 3:
-                                ConsoleTrack(_leftCornerWest);
+                                ConsoleTrack(_leftCornerWest, sectionData);
                                 ChangeCursorPosition(0, 0);
                                 compas = 2;
                                 break;
@@ -82,19 +84,19 @@ namespace consoleProject
                         switch (compas)
                         {
                             case 0:
-                                ConsoleTrack(_straightVerticalNorth);
+                                ConsoleTrack(_straightVerticalNorth, sectionData);
                                 ChangeCursorPosition(0, -8);
                                 break;
                             case 2:
-                                ConsoleTrack(_straightVerticalSouth);
+                                ConsoleTrack(_straightVerticalSouth, sectionData);
                                 ChangeCursorPosition(0, 0);
                                 break;
                             case 1:
-                                ConsoleTrack(_straightHorizontal);
+                                ConsoleTrack(_straightHorizontalEast, sectionData);
                                 ChangeCursorPosition(6 , -4);
                                 break;
                             case 3:
-                                ConsoleTrack(_straightHorizontal);
+                                ConsoleTrack(_straightHorizontalWest, sectionData);
                                 ChangeCursorPosition(-6, -4);
                                 break;
                         }
@@ -105,9 +107,62 @@ namespace consoleProject
             
         }
 
-        public static void ConsoleTrack(String[] section) {
+        public static string[] replaceString(string[] section, IParticipant participantL, IParticipant participantR)
+        {
+            string[] newString = new string[section.Length];
 
-            foreach (String part in section)
+            for (int i = 0; i < section.Length; i++)
+            {
+                newString[i] = section[i].Replace("L", participantL.Name[..1]);
+                newString[i] = newString[i].Replace("R", participantR.Name[..1]);
+            }
+            return newString;
+        }
+
+        public static string[] replaceString(string[] section, IParticipant participantL)
+        {
+            string[] newString = new string[section.Length];
+
+            for (int i = 0; i < section.Length; i++)
+            {
+                newString[i] = section[i].Replace("L", participantL.Name[..1]);
+                newString[i] = newString[i].Replace("R", " ");
+            }
+            return newString;
+        }
+
+        public static string[] replaceString(string[] section)
+        {
+            string[] newString = new string[section.Length];
+            
+
+            for(int i = 0; i < section.Length; i++)
+            {
+                newString[i] = section[i].Replace("L", " ");
+                newString[i] = newString[i].Replace("R", " ");
+            }
+            return newString;
+        }
+
+
+
+        public static void ConsoleTrack(String[] section, SectionData sectionData) {
+
+            string[] newString = new string[section.Length];
+
+            if (sectionData.left != null && sectionData.right != null)
+            {
+                newString = replaceString(section, sectionData.left, sectionData.right);
+            }
+            else if (sectionData.left != null){
+                newString = replaceString(section, sectionData.left);
+            }
+            else
+            {
+                newString = replaceString(section);
+            }
+
+            foreach (String part in newString)
             {
                 Console.SetCursorPosition(CursorLocation[0], CursorLocation[1]);
                 Console.WriteLine(part);
@@ -123,22 +178,24 @@ namespace consoleProject
 
 
         #region graphics
-        private static string[] _finishHorizontal = { "------", "  x#", "  y#", "------" };
+        private static string[] _finishHorizontal = { "------", "  L#", "  R#", "------" };
 
-        private static string[] _straightHorizontal = { "------", "  x ", "  y ", "------" };
-        private static string[] _straightVerticalSouth = { "|    |", "|    |", "|y  x|", "|    |" };
-        private static string[] _straightVerticalNorth = { "|    |", "|    |", "|x  y|", "|    |" };
+        private static string[] _straightHorizontalEast = { "------", "  L ", "  R ", "------" };
+        private static string[] _straightHorizontalWest = { "------", "  R ", "  L ", "------" };
+
+        private static string[] _straightVerticalSouth = { "|    |", "|    |", "|R  L|", "|    |" };
+        private static string[] _straightVerticalNorth = { "|    |", "|    |", "|L  R|", "|    |" };
 
 
-        private static string[] _rightCornerEast = { @"---\", @"   x\", @" y   |", @"\    |" };
-        private static string[] _rightCornerSouth = { @"/    |", " y   |", "   x/", "---/"};
-        private static string[] _rightCornerWest = { @"|    \", "|   y ", @" \x", @"  \---"};
-        private static string[] _rightCornerNorth =  { "  /---", " /x", "|   y", "|    /" };
+        private static string[] _rightCornerEast = { @"---\", @"   L\", @" R   |", @"\    |" };
+        private static string[] _rightCornerSouth = { @"/    |", " R   |", "   L/", "---/"};
+        private static string[] _rightCornerWest = { @"|    \", "|   R ", @" \L", @"  \---"};
+        private static string[] _rightCornerNorth =  { "  /---", " /L", "|   R", "|    /" };
 
-        private static string[] _leftCornerNorth = { @"---\", @"   y\", @" x   |", @"\    |" };
-        private static string[] _leftCornerEast = { @"/    |", " x   |", "   y/", "---/" };
-        private static string[] _leftCornerSouth = { @"|    \", "|   x ", @" \y", @"  \---" };
-        private static string[] _leftCornerWest = { "  /---", " /y", "|   x", "|    /" };
+        private static string[] _leftCornerNorth = { @"---\", @"   R\", @" L   |", @"\    |" };
+        private static string[] _leftCornerEast = { @"/    |", " L   |", "   R/", "---/" };
+        private static string[] _leftCornerSouth = { @"|    \", "|   L ", @" \R", @"  \---" };
+        private static string[] _leftCornerWest = { "  /---", " /R", "|   L", "|    /" };
 
         #endregion
     }
